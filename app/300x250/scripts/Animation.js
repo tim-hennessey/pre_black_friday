@@ -10,23 +10,36 @@ app.Animation = (function () {
 
 	var mask1a = document.getElementById('mask1a');
 	var mask1b = document.getElementById('mask1b');
+	var mask1c = document.getElementById('mask1c');
 	var mask2a = document.getElementById('mask2a');
 	var mask2b = document.getElementById('mask2b');
+	var mask2c = document.getElementById('mask2c');
 
 	var img18 = document.getElementById('img18');
-	// var firstA = document.getElementById('firstA');
-	// var firstB = document.getElementById('firstB');
-
-	// var catNodeList = document.querySelectorAll(".cat");
-	// var catArray = [].slice.call(catNodeList);
+	var buttonExit = document.getElementById('button-exit');
+	
 
 	// --------------------------------------------------------------------------------------
 	// set default properties
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
+		t.set(".end-frame", {opacity:1});
 		t.set(leftHalf, {transformOrigin:"203px 250px"});
 		t.set(rightHalf, {transformOrigin:"203px 250px"});
+		// t.set(img01, {visibilty:"visible"});
+
+
+		buttonExit.addEventListener('mouseover', function () {
+            t.to(".cta-txt", .25, {fill: "rgb(219,58,38)"});
+            t.to(".cta-bg", .25, {fill: "rgb(255,255,255)"});
+
+        });
+        buttonExit.addEventListener('mouseout', function () {
+            t.to(".cta-txt", .25, {fill: "rgb(255,255,255)"});
+            t.to(".cta-bg", .25, {fill: "rgb(219,58,38)"});
+
+        });
 
 		
 	}
@@ -35,23 +48,22 @@ app.Animation = (function () {
 	// Starts the animation
 	function start() {
 
-		var offsetNumber = 1;
 
+		tl1.set(img06, {visibility:"hidden"}, "+=.35")
 
-		// tl2.to(mask1a, 1, {morphSVG:"#mask1b"})
-		// .to(mask2a, 1, {morphSVG:"#mask2b"}, "-=1");
+		.set(img05, {visibility:"visible"})
+		.set(img05, {visibility:"hidden"}, "+=.35")
 
+		.set(img04, {visibility:"visible"})
+		.set(img04, {visibility:"hidden"}, "+=.35")
 
-		// tl1.staggerTo(catArray, 0, {visibility:"visible"}, .12)
-		// .staggerTo(catArray, 0, {visibility:"hidden"}, .12, "-=1.92")
+		.set(img03, {visibility:"visible"})
+		.set(img03, {visibility:"hidden"}, "+=.35")
 
-		// .set(img18, {visibility:"visible"})
-		// .to(img18, 1, {y:"+=300", ease:Circ.easeIn}, "+=.15")
-		// .to(firstA, 1, {x:"-=250", y:"+=20", rotation: "-90", ease:Circ.easeIn}, "-=.3")
-		// .to(firstB, 1, {x:"+=250", y:"+=20", rotation: "90", ease:Circ.easeIn}, "-=1");
+		.set(img02, {visibility:"visible"})
+		.set(img02, {visibility:"hidden"}, "+=.35")
 
-
-		tl1.set(img01, {visibility:"visible"})
+		.set(img01, {visibility:"visible"})
 		.set(img01, {visibility:"hidden"}, "+=.12")
 
 		.set(img02, {visibility:"visible"})
@@ -94,7 +106,7 @@ app.Animation = (function () {
 		.set(img14, {visibility:"hidden"}, "+=.12")
 
 		.set(img15, {visibility:"visible"})
-		.set(img15, {visibility:"hidden"}, "+=.12")
+		.set(img15, {visibility:"hidden"}, "+=.52")
 
 		.set(img16, {visibility:"visible"})
 		.set(img16, {visibility:"hidden"}, "+=.12")
@@ -103,14 +115,20 @@ app.Animation = (function () {
 		.set(img17, {visibility:"hidden"}, "+=.12")
 
 		.set(img18, {visibility:"visible"})
+		.set(img18, {visibility:"hidden"}, "+=.12")
+
+		.set(img19, {visibility:"visible"});
 		
-		.to(img18, 1, {y:"+=300", ease:Circ.easeIn}, "+=.15")
+		
+		tl2.to(catContainer, .75, {y:"-=10", ease:Circ.easeInOut}, "+=3.25")
+		.to(catContainer, .75, {y:"+=300", ease:Circ.easeIn}, "-=.2")
 
-		.to(mask1a, 2, {morphSVG:"#mask1b", ease:Circ.easeInOut}, "-=1")
-		.to(mask2a, 2, {morphSVG:"#mask2b", ease:Circ.easeInOut}, "-=2")
+		.to(mask1a, .75, {morphSVG:"#mask1b", ease:Circ.easeInOut}, "-=.5")
+		.to(mask2a, .75, {morphSVG:"#mask2b", ease:Circ.easeInOut}, "-=.75")
 
-		.to(leftHalf, .5, {y:"+=250", rotation: "-90", ease:Circ.easeIn}, "-=.5")
-		.to(rightHalf, .5, {y:"+=250", rotation: "90", ease:Circ.easeIn}, "-=.5");
+
+		.to(leftHalf, .5, {y:"+=250", rotation: "-90", ease:Circ.easeIn}, "-=.25")
+		.to(rightHalf, .5, {y:"+=250", rotation: "120", ease:Circ.easeIn}, "-=.5");
 
 
 		

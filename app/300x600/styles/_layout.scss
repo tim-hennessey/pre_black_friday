@@ -1,0 +1,78 @@
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #555;
+}
+
+.default {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.cat {
+    position: absolute;
+    bottom: 25px;
+    right: 0;
+    visibility: hidden;
+    // opacity: 0;
+
+}
+
+#border {
+        display: block;
+        width: $banner-width;
+        height: $banner-height;
+        pointer-events: none;
+        outline: solid 1px #ccc;
+        outline-offset: -1px;
+        z-index: 999;
+    }
+
+#banner {
+	background: #111;
+    overflow: hidden;
+    width: $banner-width;
+    height: $banner-height;
+    opacity: 0;
+
+    #mask1b, #mask1c, #mask2b, #mask2c{
+        visibility:hidden;
+    }
+
+    #img05 {
+        visibility: visible;
+        // opacity:1;
+    }
+
+    .end-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+    #catContainer {
+        width: $banner-width;
+        height: $banner-height;
+    }
+
+    #firstA {
+        clip: rect(0px,203px,250px,0px);
+    }
+
+    #firstB {
+        clip: rect(0px,300px,250px,203px);
+    }
+
+    #button-exit {
+        background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
+        height: 100%;
+        width: 100%;
+    }
+
+    
+
+    
+}

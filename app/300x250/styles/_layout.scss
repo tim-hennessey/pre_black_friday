@@ -16,6 +16,15 @@ body {
     right: 0;
     visibility: hidden;
 }
+#border {
+        display: block;
+        width: $banner-width;
+        height: $banner-height;
+        pointer-events: none;
+        outline: solid 1px #ccc;
+        outline-offset: -1px;
+        z-index: 999;
+    }
 
 #banner {
 	background: #111;
@@ -23,6 +32,26 @@ body {
     width: $banner-width;
     height: $banner-height;
     opacity: 0;
+
+    #mask1b, #mask1c, #mask2b, #mask2c{
+        visibility:hidden;
+    }
+
+    #img06 {
+        visibility: visible;
+    }
+
+    .end-frame {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity:0;
+    }
+
+    #catContainer {
+        width: $banner-width;
+        height: $banner-height;
+    }
 
     #firstA {
         clip: rect(0px,203px,250px,0px);
@@ -39,15 +68,7 @@ body {
         width: 100%;
     }
 
-    #border {
-		display: block;
-		width: $banner-width;
-		height: $banner-height;
-        pointer-events: none;
-		outline: solid 1px #ccc;
-  		outline-offset: -1px;
-		z-index: 999;
-    }
+    
 
     
 }
